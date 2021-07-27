@@ -3,14 +3,6 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.weather-app {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 5px;
-}
-
 h1 {
   color: cornflowerblue;
   font-size: 24px;
@@ -32,4 +24,39 @@ li {
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
+}
+
+.weather-app-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.fa-cloud-rain {
+  margin-right: 5px;
+  font-size: 36px;
+  color: rgb(198, 206, 214);
+  opacity: 50%;
+}
+
+.weather-temperature strong {
+  font-size: 40px;
+  color: cornflowerblue;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 12px;
+  top: -20px;
 }
