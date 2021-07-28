@@ -30,6 +30,10 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+img [src=""] {
+  display: none;
+}
+
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
@@ -63,4 +67,22 @@ li:first-letter {
   position: relative;
   font-size: 12px;
   top: -20px;
+}
+
+.weather-temperature .active {
+  color: darkslategrey;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+#celsius-link {
+  text-decoration: none;
+  cursor: default;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
 }
