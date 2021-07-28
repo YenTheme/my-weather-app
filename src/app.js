@@ -1,61 +1,90 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-function displayTemperature(response) {
-  console.log(response.data);
-  let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
-  let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector("#icon");
-  cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+h1 {
+  color: cornflowerblue;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
 }
 
-function search(city) {
-  let apiKey = "6e94439914e32efa583f1fcc9cafaa3c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-  console.log(apiUrl);
-  axios.get(apiUrl).then(displayTemperature);
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: darkslategrey;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+li:first-letter {
+  text-transform: capitalize;
+}
+
+img [src=""] {
+  display: none;
+}
+
+.weather-app-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.fa-cloud-rain {
+  margin-right: 5px;
+  font-size: 36px;
+  color: rgb(198, 206, 214);
+  opacity: 50%;
+}
+
+.weather-temperature strong {
+  font-size: 40px;
+  color: cornflowerblue;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 12px;
+  top: -20px;
+}
+
+.weather-temperature .active {
+  color: darkslategrey;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+#celsius-link {
+  text-decoration: none;
+  cursor: default;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+}
+
+search("Singapore");
