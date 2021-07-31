@@ -9,6 +9,7 @@ h1 {
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
+  font-family: lobster;
 }
 
 ul {
@@ -43,17 +44,11 @@ img [src=""] {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px lightsteelblue;
 }
 
 .overview {
   margin-bottom: 20px;
-}
-
-.fa-cloud-rain {
-  margin-right: 5px;
-  font-size: 36px;
-  color: rgb(198, 206, 214);
-  opacity: 50%;
 }
 
 .weather-temperature strong {
@@ -67,15 +62,6 @@ img [src=""] {
   position: relative;
   font-size: 12px;
   top: -20px;
-}
-
-.weather-temperature .active {
-  color: darkslategrey;
-  cursor: default;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
 }
 
 .weather-forecast {
@@ -97,12 +83,16 @@ img [src=""] {
   font-size: 13px;
   color: cadetblue;
 }
-
-#celsius-link {
-  text-decoration: none;
-  cursor: default;
+.open-source {
+  display: block;
+  text-align: center;
+}
+#search-button {
+  background-color: lightskyblue;
+  border-color: lightskyblue;
 }
 
-#fahrenheit-link {
-  text-decoration: none;
+#description {
+  color: lightslategrey;
+  font-weight: bold;
 }
