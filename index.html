@@ -11,12 +11,13 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-    <script
-      src="https://kit.fontawesome.com/e088b0b9ac.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100;1,400;1,700;1,900&family=Lobster&family=Noticia+Text&family=Roboto:wght@100;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -25,11 +26,22 @@
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-9">
-            <input type="search" placeholder="Type a city name" class="form-control" id="city-input" autocomplete="off"/>
-            </div>
-            <div class="col-3">
-            <input type="submit" value="Search" class="btn btn-primary w-100"/>
-            </div>
+                <input
+                  type="search"
+                  placeholder="Type a city name"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                  id="search-button"
+                />
+              </div>
             </div>
           </form>
           <div class="overview">
@@ -42,9 +54,9 @@
           <div class="row">
             <div class="col-6">
               <div class="weather-temperature">
-                <img src=""alt="" id="icon">
+                <img src="" alt="" id="icon" />
                 <strong id="temperature"></strong>
-                <span class="units"><a href="#" id="celsius-link" class="active">°C</a>|<a href="#" id="fahrenheit-link">°F</a></span>
+                <span class="units">°C</span>
               </div>
             </div>
             <div class="col-6">
@@ -53,29 +65,20 @@
                 <li>Wind: <span id="wind"></span>km/h</li>
               </ul>
             </div>
-        </div>
-        <div class="weather-forecast"></div> 
-        <div class ="row">
-          <div class="col-2">
-            <div class="weather-forecast-date">
-              Thu<img src="http://openweathermap.org/img/wn/50d@2x.png"alt="" width="42">
-          <div class="weather-forecast-temperature">
-             <span class="weather-forecast-temperature-max">
-            18°</span><span class="weather-forecast-temperature-min"> 12°</span>
-              </div>
-        
-            </div>
-
-      </div>
-
+          </div>
+          <div class="weather-forecast" id="forecast">
+            <div class="row"></div>
+          </div>
         </div>
       </div>
-      <small>
+      <div class="open-source">
+        <small>
           <a href="https://github.com/YenTheme/my-weather-app" target="_blank"
             >Open-source code,</a
           >
           by Lim Yen Theme
         </small>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
